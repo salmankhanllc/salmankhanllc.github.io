@@ -1,1 +1,7 @@
-{"apkUrl":"https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk","exeUrl":null,"notes":"Auto RePost bara fix (Android + Desktop): (1) Downloader tayyar hone se pehle jo video galti se 'skip' ho gayi thi (Pearl Harbor wali), wo khud wapas line mein aa jayegi aur agli check mein post hogi — ab downloader ke tayyar hone ka intezaar hota hai, na-ready par koi video skip nahi hoti. (2) Error messages ab asal wajah dikhayengi (lambi Python traceback ki pehli line nahi). Android par kharab downloader update khud pehchan kar purana version wapas laga diya jata hai. (3) Naya: Fixed Time — har watch ke liye roz ke fixed auqaat (1-3) chun sakte hain, masalan roz 4:30 PM par ek video; ya purana waqfa (interval) bhi maujood hai.","versionCode":25,"versionName":"2.9.4"}
+{
+  "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk",
+  "exeUrl": null,
+  "notes": "Auto RePost fix (Android + Desktop): (1) Jo video 'downloader kharab' (ImportError) ki wajah se galti se skip ho gayi thi — Pearl Harbor / Kimmel wali — wo is update ke baad khud wapas line mein aa jayegi aur agli check mein sab se pehle post hogi. Ab kharab downloader par koi video skip NAHI hoti, sirf rukti hai. (2) Downloader ki hifazat mazboot kar di: kharab yt-dlp copy ab kabhi istemal nahi hogi, aur internet se khud-bakhud naya downloader download karne wala purana system hamesha ke liye band kar diya gaya hai (usi ne kharab copy lagai thi). NOTE: Android par YouTube download ka asal masla (purani library) abhi baqi hai — is ke liye alag bari update (library upgrade) chahiye hogi; tab tak failed video line mein hi rahegi, zaya nahi hogi.",
+  "versionCode": 26,
+  "versionName": "2.9.5"
+}
