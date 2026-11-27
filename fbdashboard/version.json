@@ -1,1 +1,7 @@
-{"apkUrl":"https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk","exeUrl":null,"notes":"Settings naya design + delete aur loading ki islah — Settings ab list se khulegi; photo delete ki asal wajah bhi nazar ayegi","versionCode":18,"versionName":"2.8.0"}
+{
+  "versionCode": 19,
+  "versionName": "2.8.1",
+  "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk",
+  "notes": "Post location setting — Page ki location har post par khud lagegi (Settings mein ek dafa on karein)",
+  "exeUrl": null
+}
