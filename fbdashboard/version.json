@@ -1,7 +1,1 @@
-{
-  "versionCode": 20,
-  "versionName": "2.8.2",
-  "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk",
-  "notes": "Custom location tag — har Page ke liye apni pasand ki jagah set karein, har post par khud lagegi",
-  "exeUrl": null
-}
+{"apkUrl":"https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk","exeUrl":null,"notes":"Auto RePost — YouTube channel ki nayi videos khud Facebook Page par post hongi (laptop + mobile dono par)","versionCode":21,"versionName":"2.9.0"}
