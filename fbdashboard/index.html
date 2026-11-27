@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FB Dashboard — Manage All Your Facebook Pages From One App</title>
+<meta name="description" content="FB Dashboard: post, schedule, auto-post, manage comments and check analytics for all your Facebook Pages — from one app on your phone or laptop.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2311100d'/%3E%3Crect x='14' y='30' width='9' height='20' rx='2' fill='%23e3a008'/%3E%3Crect x='28' y='20' width='9' height='30' rx='2' fill='%23f2c14e'/%3E%3Crect x='42' y='12' width='9' height='38' rx='2' fill='%23e3a008'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0d0b09; --bg2:#14110d; --card:#171410; --card2:#1d1913;
+    --line:#2b2519; --text:#f5efe3; --muted:#b8ab90; --muted2:#8f846c;
+    --gold:#e3a008; --gold2:#f2c14e; --gold-ink:#1a1305;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--gold2)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(13,11,9,.92);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:12px;padding:12px 0}
+  .logo{width:40px;height:40px;flex:0 0 40px}
+  .brand{font-weight:800;font-size:19px;letter-spacing:.2px}
+  .brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
+  .bar .sp{flex:1}
+  .ver{font-size:12px;font-weight:700;color:var(--gold2);border:1px solid var(--line);
+    background:var(--card);border-radius:999px;padding:4px 10px;white-space:nowrap}
+  .bar .dl{font-size:13px;font-weight:700;color:var(--gold-ink);text-decoration:none;
+    background:linear-gradient(180deg,var(--gold2),var(--gold));border-radius:10px;padding:8px 14px;white-space:nowrap}
+  /* hero */
+  .hero{padding:56px 0 40px;text-align:center;
+    background:radial-gradient(640px 300px at 50% -60px,rgba(227,160,8,.16),transparent 70%)}
+  .hero .logo{width:84px;height:84px;margin:0 auto 18px}
+  h1{font-size:40px;line-height:1.15;margin:0 0 14px;font-weight:850}
+  h1 .g{color:var(--gold2)}
+  .promise{font-size:18px;color:var(--muted);max-width:640px;margin:0 auto 30px}
+  .cta{display:flex;flex-direction:column;gap:14px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;
+    border-radius:14px;padding:16px 26px;font-size:17px;border:1px solid transparent}
+  .btn svg{width:22px;height:22px;flex:0 0 22px}
+  .btn-gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--gold-ink);
+    box-shadow:0 10px 30px rgba(227,160,8,.25)}
+  .btn-ghost{background:var(--card);color:var(--text);border-color:var(--line)}
+  .btn-wa{background:#1faa55;color:#fff}
+  .fineprint{font-size:13px;color:var(--muted2);margin-top:6px}
+  /* download cards */
+  .downloads{display:grid;gap:16px;margin:38px 0 6px}
+  .dcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;text-align:left;display:flex;flex-direction:column;gap:8px}
+  .dcard h3{margin:0;font-size:19px;display:flex;align-items:center;gap:10px}
+  .dcard h3 svg{width:24px;height:24px;stroke:var(--gold2)}
+  .dcard p{margin:0;color:var(--muted);font-size:15px;flex:1}
+  .dcard .btn{justify-content:center;margin-top:10px;padding:13px 20px;font-size:15px}
+  /* sections */
+  section{padding:44px 0 8px}
+  h2{font-size:27px;margin:0 0 8px;font-weight:820;text-align:center}
+  .sub{color:var(--muted);text-align:center;max-width:560px;margin:0 auto 26px}
+  .grid{display:grid;gap:14px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .feat .ic{width:42px;height:42px;border-radius:11px;background:var(--card2);
+    border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .feat .ic svg{width:22px;height:22px;stroke:var(--gold2)}
+  .feat h3{margin:0 0 6px;font-size:16.5px}
+  .feat p{margin:0;color:var(--muted);font-size:14.5px}
+  /* steps */
+  .steps{display:grid;gap:14px;counter-reset:step}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;gap:16px;align-items:flex-start}
+  .num{flex:0 0 38px;width:38px;height:38px;border-radius:50%;
+    background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--gold-ink);
+    font-weight:850;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .step h3{margin:2px 0 4px;font-size:16.5px}
+  .step p{margin:0;color:var(--muted);font-size:14.5px}
+  .center{text-align:center;margin-top:22px}
+  /* privacy strip */
+  .strip{margin:44px 0 0;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:22px;text-align:center}
+  .strip strong{color:var(--gold2)}
+  .strip p{margin:0;color:var(--muted);font-size:15px}
+  /* footer */
+  footer{margin-top:48px;border-top:1px solid var(--line);padding:26px 0 40px;
+    color:var(--muted2);font-size:13.5px}
+  .flinks{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-bottom:12px}
+  .flinks a{color:var(--muted);text-decoration:none}
+  .flinks a:hover{color:var(--gold2)}
+  footer p{text-align:center;margin:4px 0}
+  @media (min-width:640px){
+    .downloads{grid-template-columns:1fr 1fr}
+    .grid{grid-template-columns:1fr 1fr}
+    .cta{flex-direction:row;justify-content:center}
+    h1{font-size:48px}
+  }
+  @media (min-width:920px){
+    .grid{grid-template-columns:1fr 1fr 1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr 1fr}
+    .step{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#171410"/><rect x="14" y="30" width="9" height="20" rx="2" fill="#e3a008"/><rect x="28" y="20" width="9" height="30" rx="2" fill="#f2c14e"/><rect x="42" y="12" width="9" height="38" rx="2" fill="#e3a008"/></svg>
+    <div class="brand">FB Dashboard<small>Page Management App</small></div>
+    <div class="sp"></div>
+    <span class="ver">v2.8.1</span>
+    <a class="dl" href="https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk">Download</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#171410"/><rect x="14" y="30" width="9" height="20" rx="2" fill="#e3a008"/><rect x="28" y="20" width="9" height="30" rx="2" fill="#f2c14e"/><rect x="42" y="12" width="9" height="38" rx="2" fill="#e3a008"/></svg>
+    <h1>All your Facebook Pages.<br><span class="g">One app.</span></h1>
+    <p class="promise">Manage every Facebook Page you run from one place — post, schedule, auto-post, handle comments and check analytics, from your phone or your laptop.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></svg>
+        Download for Android
+      </a>
+      <a class="btn btn-ghost" href="#get-access">How to get access</a>
+    </div>
+    <p class="fineprint">Version 2.8.1 &middot; Android 7.0 or newer &middot; A license key is needed to activate the app</p>
+
+    <div class="downloads">
+      <div class="dcard">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg> Android App</h3>
+        <p>The full dashboard on your phone. Download the APK, install it, and allow &ldquo;install unknown apps&rdquo; for your browser once if Android asks. After that, new versions arrive inside the app itself.</p>
+        <a class="btn btn-gold" href="https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk">Download APK</a>
+      </div>
+      <div class="dcard">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></svg> Windows (Laptop / PC)</h3>
+        <p>Prefer a big screen? The same dashboard runs on Windows as a portable app — no installation, just open and use. Message us on WhatsApp and we will send you the laptop version.</p>
+        <a class="btn btn-wa" href="https://wa.me/923305913259?text=I%20want%20the%20FB%20Dashboard%20Windows%20version">Get it on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="features">
+    <h2>What FB Dashboard does</h2>
+    <p class="sub">Built for people who manage many Pages and want the daily work to take minutes, not hours.</p>
+    <div class="grid">
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div>
+        <h3>Many Pages, many accounts</h3>
+        <p>Connect more than one Facebook account and manage all of their Pages — 10, 20, even 50 Pages — from a single dashboard.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 3v6h-6"/></svg></div>
+        <h3>Auto Post</h3>
+        <p>Fill the posting queue once, set up to 3 daily times, and the app publishes on its own — no daily effort from you.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Scheduler</h3>
+        <p>Write posts now and schedule them for later. Each scheduled post publishes with the account that created it.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5Z"/></svg></div>
+        <h3>Comments management</h3>
+        <p>See the comments on every post and reply, like, hide or delete them — without opening Facebook again and again.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5-9 9"/></svg></div>
+        <h3>Media library</h3>
+        <p>Browse the photos, videos and reels of your Pages, publish new posts and stories, and delete media you no longer need.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg></div>
+        <h3>Analytics</h3>
+        <p>Views, engagement and follower growth for each Page — daily, weekly or the last 28 days — in one clean view.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10"/><path d="m8 9 4 4 4-4"/><path d="M4 17v3h16v-3"/></svg></div>
+        <h3>Updates inside the app</h3>
+        <p>When a new version is released, your app offers it on its own Updates page. No files to hunt for, no reinstalling by hand.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="14" r="4"/><path d="m11 11 9-9"/><path d="M16 4l3 3"/><path d="M19 7l2-2"/></svg></div>
+        <h3>Simple license activation</h3>
+        <p>One personal license key activates your copy. Activation is checked on your own device — the app works without any account system of ours.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-access">
+    <h2>How to get access</h2>
+    <p class="sub">Three simple steps and you are in.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3>Download &amp; install</h3>
+          <p>Get the Android app from the download button above (or ask for the Windows version on WhatsApp) and install it on your device.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3>Get your license key</h3>
+          <p>License keys are issued personally by the owner. Send a WhatsApp message and you will get your key and any help you need.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3>Activate &amp; log in</h3>
+          <p>Enter your key, log in with your own Facebook account, choose your Pages — done. Your Pages are ready to manage.</p>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <a class="btn btn-wa" href="https://wa.me/923305913259?text=I%20want%20a%20license%20key%20for%20FB%20Dashboard">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z"/></svg>
+        Get your key on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <div class="strip">
+    <p><strong>Your data stays on your device.</strong> FB Dashboard has no tracking, no ads and no cloud server in between — the app talks only to Facebook&rsquo;s official API, with your own login.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="data-deletion.html">Data Deletion</a>
+      <a href="https://wa.me/923305913259">WhatsApp</a>
+    </div>
+    <p>FB Dashboard v2.8.1 &middot; by Salman Khan</p>
+    <p>FB Dashboard is an independent tool and is not affiliated with Meta Platforms, Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
