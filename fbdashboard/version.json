@@ -1,7 +1,7 @@
 {
-  "versionCode": 19,
-  "versionName": "2.8.1",
+  "versionCode": 20,
+  "versionName": "2.8.2",
   "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk",
-  "notes": "Post location setting — Page ki location har post par khud lagegi (Settings mein ek dafa on karein)",
+  "notes": "Custom location tag — har Page ke liye apni pasand ki jagah set karein, har post par khud lagegi",
   "exeUrl": null
 }
