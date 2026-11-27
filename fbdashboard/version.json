@@ -1,1 +1,1 @@
-{"versionCode":16,"versionName":"2.7.0","apkUrl":"https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk","exeUrl":null,"notes":"Comments feature + media delete fix — post ke comments dekhein, reply/hide/delete karein; photo delete bhi theek kar diya"}
+{"versionCode": 17, "versionName": "2.7.1", "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk", "notes": "Teen chhote bugs theek — Analytics ka period switch, laptop par scheduled posts, aur delete par Facebook ka asal error", "exeUrl": null}
