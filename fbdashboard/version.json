@@ -1,1 +1,7 @@
-{"apkUrl": "https://github.com/salmankhanllc/salmankhanllc.github.io/releases/download/fbdashboard-v2.9.9/FBDashboard.apk", "exeUrl": null, "notes": "Is update mein Auto RePost ki caption theek kar di gayi hai, aap ki hidayat par: ab caption mein YouTube ka link NAHI ayega. Caption sirf video ka title hoga, aur us ke neeche video ke APNE hashtags — jo hashtags us video ki apni description aur tags mein mojood hain, wohi dusri line mein ajayenge. Agar kisi video ke apne hashtags na hon, ya un ki maloomat na mil payen, to caption sirf title par hoga — post phir bhi ho jayegi, rukegi nahi. Baaki sab kuch pehle jaisa hai: downloader (yt-dlp 2026.11.23), client rotation, fail hone par stage + asal wajah wala note, aur identity verification wali hifazat. War Command Files ke liye wahi purani baat: Facebook app mein identity verification mukammal karne ke baad hi is Page par post hogi.", "versionCode": 30, "versionName": "2.9.9"}
+{
+  "versionCode": 31,
+  "versionName": "2.10.0",
+  "apkUrl": "https://github.com/salmankhanllc/salmankhanllc.github.io/releases/download/fbdashboard-v2.10.0/FBDashboard.apk",
+  "notes": "Ab TikTok account bhi watch ho sakta hai — TikTok ki videos khud Facebook Page par post hongi. Caption wahi rule: video ka apna text + us ke apne hashtags, koi link nahi.",
+  "exeUrl": null
+}
