@@ -1,7 +1,1 @@
-{
-  "apkUrl": "https://salmankhanllc.github.io/fbdashboard/FBDashboard.apk",
-  "exeUrl": null,
-  "notes": "Auto RePost fix (Android + Desktop): (1) Jo video 'downloader kharab' (ImportError) ki wajah se galti se skip ho gayi thi — Pearl Harbor / Kimmel wali — wo is update ke baad khud wapas line mein aa jayegi aur agli check mein sab se pehle post hogi. Ab kharab downloader par koi video skip NAHI hoti, sirf rukti hai. (2) Downloader ki hifazat mazboot kar di: kharab yt-dlp copy ab kabhi istemal nahi hogi, aur internet se khud-bakhud naya downloader download karne wala purana system hamesha ke liye band kar diya gaya hai (usi ne kharab copy lagai thi). NOTE: Android par YouTube download ka asal masla (purani library) abhi baqi hai — is ke liye alag bari update (library upgrade) chahiye hogi; tab tak failed video line mein hi rahegi, zaya nahi hogi.",
-  "versionCode": 26,
-  "versionName": "2.9.5"
-}
+{"apkUrl":"https://github.com/salmankhanllc/salmankhanllc.github.io/releases/download/fbdashboard-v2.9.6/FBDashboard.apk","exeUrl":null,"notes":"Auto RePost ka NAYA downloader engine (Android): purani library ki jagah nayi library lag gayi hai — andar naya Python aur yt-dlp 2026 hai, jo aaj kal ki YouTube par chalta hai. Isi liye ye update bari hai (59 MB). Pehli dafa app khulne par naya engine tayyar hone mein thora waqt lagega — ghabrana nahi, ye sirf pehli dafa hoga. Auto RePost wale page par ab downloader ka version bhi dikhega, taake pata chale konsa engine chal raha hai. Apni rukki hui video ke liye watch par 'Abhi post karo' dobara try karein.","versionCode":27,"versionName":"2.9.6"}
